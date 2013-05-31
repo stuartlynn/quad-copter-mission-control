@@ -1,10 +1,10 @@
 express = require('express')
 app = module.exports = express.createServer()
-copter = require('ar-drone').client()
-io = require('socket.io')
+copter = require('ar-drone').createClient()
+socketio = require('socket.io')
 
 
-pngStream = client.getPngStream()
+pngStream = copter.getPngStream()
 
 app.configure =>
   app.use express.bodyParser()
@@ -21,7 +21,7 @@ app.configure 'production', =>
   app.use express.errorHandler()
 
 app.listen(3000)
-io.listen(app)
+io = socketio.listen(app)
 
 io.sockets.on 'connection', (socket)=>
 	copter.on 'navdata', (data) =>
