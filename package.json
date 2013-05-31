@@ -6,6 +6,7 @@
       "express": "2.5.2"
     , "socket.io": "*"
     , "coffee-script": "*"
+    , "stylus" : "*"
     , "node-ar-drone" : "git://github.com/felixge/node-ar-drone.git"
   }
 }
