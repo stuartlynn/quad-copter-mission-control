@@ -1,5 +1,6 @@
 express = require('express')
 app = module.exports = express.createServer()
+io = require('socket.io')
 
 app.configure =>
   app.use(express.bodyParser())
@@ -16,5 +17,7 @@ app.configure 'development', =>
 app.configure 'production', =>
   app.use express.errorHandler()
 
-app.listen(3000);
+
+app.listen(3000)
+io.listen(app)
 console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);
