@@ -1,0 +1,11 @@
+{
+    "name": "application-name"
+  , "version": "0.0.1"
+  , "private": true
+  , "dependencies": {
+      "express": "2.5.2"
+    , "socket.io": "*"
+    , "coffee-script": "*"
+    , "node-ar-drone" : "git://github.com/felixge/node-ar-drone.git"
+  }
+}
