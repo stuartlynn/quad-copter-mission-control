@@ -1,10 +1,10 @@
 express = require('express')
 app = module.exports = express.createServer()
 copter = require('ar-drone').createClient()
+
 socketio = require('socket.io')
 
 
-pngStream = copter.getPngStream()
 
 app.configure =>
   app.use express.bodyParser()
@@ -27,9 +27,9 @@ io.sockets.on 'connection', (socket)=>
 	copter.on 'navdata', (data) =>
   	socket.emit('navData',data);
 
-  pngStream.on 'pngStream', (data)=>
-  	console.log "\n\nGOT IMAGE \n\n"
-  	socket.emit('pngStream', data)
+ 
+
+require('ar-drone-png-stream')(copter, { port: 3002 })
 
 
 copter.on('navdata', console.log);

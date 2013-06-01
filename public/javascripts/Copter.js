@@ -5,10 +5,8 @@
 
   Copter = (function() {
     function Copter() {
-      this.updateImage = __bind(this.updateImage, this);
       this.updateNavData = __bind(this.updateNavData, this);      this.socket_connection = io.connect('http://0.0.0.0:3000/');
       this.socket_connection.on('navData', this.updateNavData);
-      this.socket_connection.on('pngStream', this.updateImage);
     }
 
     Copter.prototype.updateNavData = function(data) {
@@ -17,11 +15,6 @@
       $(".speedY").html(data.demo.velocity.y);
       $(".speedZ").html(data.demo.velocity.z);
       return $(".altitude").html(data.demo.altitudeMeters + " meters");
-    };
-
-    Copter.prototype.updateImage = function(data) {
-      console.log("got image");
-      return $(".video").attr("src", data);
     };
 
     return Copter;
