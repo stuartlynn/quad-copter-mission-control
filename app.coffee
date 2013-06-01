@@ -25,8 +25,10 @@ io = socketio.listen(app)
 
 io.sockets.on 'connection', (socket)=>
 	copter.on 'navdata', (data) =>
-  	socket.emit('navdata',data);
-  copter.on 'pngStream', (data)=>
+  	socket.emit('navData',data);
+
+  pngStream.on 'pngStream', (data)=>
+  	console.log "\n\nGOT IMAGE \n\n"
   	socket.emit('pngStream', data)
 
 
