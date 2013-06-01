@@ -1,8 +1,44 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+html {
+  background: #000;
+  color: #fff;
+  height: 100%;
+  width: 100%;
 }
-
-a {
-  color: #00B7FF;
+body {
+  height: 100%;
+  margin: 0;
+  width: 100%;
+}
+.main-outer {
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+.main-inner {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+.controller {
+  display: inline-block;
+  height: 600px;
+  text-align: left;
+  width: 800px;
+}
+.output {
+  position: relative;
+  outline: 1px solid #808080;
+}
+.altitude {
+  position: absolute;
+}
+.camera-view {
+  box-shadow: 0 10px 20px -10px #000;
+}
+.input {
+  position: relative;
+}
+textarea[name="commands"] {
+  height: 100px;
+  width: 90%;
 }

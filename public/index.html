@@ -1,10 +1,12 @@
+<!DOCTYPE html>
+
 <html>
 <head>
 	<script src="/socket.io/socket.io.js"></script>
 	<script src="javascripts/d3.v3.min.js"></script>
 	<script src="javascripts/jquery-1.10.1.min.js"></script>
 	<script src='javascripts/Copter.js'></script>
-
+  <link rel="stylesheet" href="stylesheets/style.css" />
 </head>
 <body>
 	<h1> Awesome quad interface goes here</h1>
@@ -17,6 +19,24 @@
 		<textarea class='drone_instructions' name='instructins'></textarea>
 		<input type='submit' name='submit'></input>
 	</form>
+
+	<div class="main-outer">
+    <div class="main-inner">
+      <div class="controller">
+        <div class="output">
+          <div class="altitude"><span class="value"></span>m</div>
+          <img src="//placehold.it/640x480.png" class="camera-view" />
+        </div>
+
+        <div class="input">
+          <form name="input">
+            <textarea name="commands" placholder="Tell me what to do"></textarea>
+            <button type="submit">Do it</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>
