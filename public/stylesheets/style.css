@@ -33,6 +33,8 @@ body {
 }
 .video {
   display: block;
+  height: 480px;
+  width: 640px;
 }
 .status {
   bottom: 0;
