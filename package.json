@@ -9,5 +9,7 @@
     , "stylus" : "*"
     , "node-ar-drone" : "git://github.com/felixge/node-ar-drone.git"
     , "ar-drone-png-stream" : "git://github.com/Soarez/ar-drone-png-stream.git"
+    , "logo-drone" : "git://github.com/stuartlynn/logo-drone.git"
+
   }
 }

@@ -5,6 +5,9 @@ copter = require('ar-drone').createClient()
 socketio = require('socket.io')
 
 
+require('ar-drone-png-stream')(copter, { port: 3002 })
+logo_interface = require('logo-drone')(copter)
+
 
 app.configure =>
   app.use express.bodyParser()
@@ -27,11 +30,12 @@ io.sockets.on 'connection', (socket)=>
 	copter.on 'navdata', (data) =>
   	socket.emit('navData',data);
 
- 
+	socket.on 'instructions', (data)=>
+    if data?
+      console.log "received instructions #{data.instructions}" 
+		  logo_interface.convertAndSend  data.instructions 
 
-require('ar-drone-png-stream')(copter, { port: 3002 })
 
 
-copter.on('navdata', console.log);
 
 console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);
