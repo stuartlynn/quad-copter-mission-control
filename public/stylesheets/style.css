@@ -1,6 +1,7 @@
 html {
-  background: #000;
+  background: #333;
   color: #fff;
+  font: 14px "Helvetica Neue", sans-serif;
   height: 100%;
   width: 100%;
 }
@@ -20,25 +21,54 @@ body {
   vertical-align: middle;
 }
 .controller {
+  box-shadow: 0 10px 20px -10px #000;
   display: inline-block;
-  height: 600px;
+  height: 640px;
   text-align: left;
-  width: 800px;
+  width: 640px;
 }
 .output {
   position: relative;
   outline: 1px solid #808080;
 }
-.altitude {
-  position: absolute;
+.video {
+  display: block;
 }
-.camera-view {
-  box-shadow: 0 10px 20px -10px #000;
+.status {
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+  left: 0;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+}
+.status .status-item {
+  display: inline-block;
+  padding: 5px 10px;
 }
 .input {
   position: relative;
+  height: 160px;
 }
-textarea[name="commands"] {
-  height: 100px;
-  width: 90%;
+.input textarea {
+  box-sizing: border-box;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.input input {
+  background: #090;
+  border: 0;
+  border-radius: 50%;
+  bottom: 10px;
+  box-shadow: 0 5px 10px -5px #000;
+  color: #fff;
+  cursor: pointer;
+  font-size: 20px;
+  height: 30px;
+  position: absolute;
+  right: 10px;
+  width: 30px;
 }

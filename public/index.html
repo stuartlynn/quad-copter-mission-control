@@ -2,6 +2,7 @@
 
 <html>
 <head>
+  <meta charset="utf-8" />
 	<script src="/socket.io/socket.io.js"></script>
 	<script src="javascripts/d3.v3.min.js"></script>
 	<script src="javascripts/jquery-1.10.1.min.js"></script>
@@ -9,29 +10,25 @@
   <link rel="stylesheet" href="stylesheets/style.css" />
 </head>
 <body>
-	<h1> Awesome quad interface goes here</h1>
-	<p>Battery: <span class='battery'></span></p>
-	<p>Speed x: <span class='speedX'></span> y: <span class='speedY'></span> z: <span class='speedZ'></span></p>
-	<p>Altitude: <span class='altitude'></span></p>
-	<img src='http://0.0.0.0:3002' class='video'></img>
-
-	<form class='instructions'>
-		<textarea class='drone_instructions' name='instructins'></textarea>
-		<input type='submit' name='submit'></input>
-	</form>
-
 	<div class="main-outer">
     <div class="main-inner">
       <div class="controller">
         <div class="output">
-          <div class="altitude"><span class="value"></span>m</div>
-          <img src="//placehold.it/640x480.png" class="camera-view" />
+          <img src="//placehold.it/640x480.png" class="video" />
+
+          <div class="status">
+            <span class="status-item">BAT: <span class='battery'>—</span>%</span>
+            <span class="status-item">ALT: <span class='altitude'>—</span></span>
+            <span class="status-item">X: <span class='speedX'>—</span>
+            <span class="status-item">Y: <span class='speedY'>—</span></span>
+            <span class="status-item">Z: <span class='speedZ'>—</span></span>
+          </div>
         </div>
 
         <div class="input">
-          <form name="input">
-            <textarea name="commands" placholder="Tell me what to do"></textarea>
-            <button type="submit">Do it</button>
+          <form class='instructions'>
+            <textarea class='drone_instructions' name='instructins'></textarea>
+            <input type='submit' name='submit' value="✓" />
           </form>
         </div>
       </div>
