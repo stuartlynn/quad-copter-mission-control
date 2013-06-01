@@ -22,15 +22,22 @@
             <span class="status-item">X: <span class='speedX'>—</span>
             <span class="status-item">Y: <span class='speedY'>—</span></span>
             <span class="status-item">Z: <span class='speedZ'>—</span></span>
+            <span class="status-item">STATUS: <span id='flightStatus'>READY</span></span>
           </div>
         </div>
 
         <div class="input">
           <form class='instructions'>
             <textarea class='drone_instructions' name='instructins'></textarea>
-            <input type='submit' name='submit' value="✓" />
+            <input class='submit_button' type='submit' name='submit' value="✓" />
           </form>
         </div>
+      </div>
+
+      <div class='commands'>
+      	<p> Each command is followed by a number indicating in secconds how long you want that action to go on for</p>
+      	<p> Commands are: up, down, left, right, forwards, backwards, clockwise, counterclockwise</p>
+      	</ul>
       </div>
     </div>
   </div>
